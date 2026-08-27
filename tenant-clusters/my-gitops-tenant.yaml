@@ -28,3 +28,21 @@ spec:
           argoCD:
             enabled: true
             connector: local-test-argocd
+        deploy:
+          argoCD:
+            applications:
+              - name: grafana-doc-test
+                displayName: "Grafana Doc Test"
+                target: vcluster
+                inline:
+                  source:
+                    repoURL: "https://github.com/argoproj/argocd-example-apps.git"
+                    targetRevision: HEAD
+                    path: guestbook
+                  project: default
+                  syncPolicy:
+                    automated:
+                      prune: true
+                      selfHeal: true
+                  destination:
+                    namespace: default
