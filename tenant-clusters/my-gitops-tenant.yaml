@@ -8,7 +8,7 @@ spec:
   owner:
     user: admin
   clusterRef:
-    cluster: agent
+    cluster: loft-cluster
   template:
     helmRelease:
       chart:
