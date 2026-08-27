@@ -5,6 +5,8 @@ metadata:
   namespace: p-default
 spec:
   displayName: my-gitops-tenant
+  owner:
+    user: admin
   template:
     helmRelease:
       chart:

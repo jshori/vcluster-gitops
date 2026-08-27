@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: tenant-clusters
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/jshori/vcluster-gitops.git
+    targetRevision: main
+    path: tenant-clusters
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: p-default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
