@@ -33,7 +33,7 @@ spec:
             applications:
               - name: grafana-doc-test
                 displayName: "Grafana Doc Test"
-                target: vcluster
+                target: vCluster
                 inline:
                   source:
                     repoURL: "https://github.com/argoproj/argocd-example-apps.git"
