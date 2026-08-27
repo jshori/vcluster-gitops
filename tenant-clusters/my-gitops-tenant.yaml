@@ -35,14 +35,15 @@ spec:
                 displayName: "Grafana Doc Test"
                 target: vCluster
                 inline:
-                  source:
-                    repoURL: "https://github.com/argoproj/argocd-example-apps.git"
-                    targetRevision: HEAD
-                    path: guestbook
-                  project: default
-                  syncPolicy:
-                    automated:
-                      prune: true
-                      selfHeal: true
-                  destination:
-                    namespace: default
+                  spec:
+                    source:
+                      repoURL: "https://github.com/argoproj/argocd-example-apps.git"
+                      targetRevision: HEAD
+                      path: guestbook
+                    project: default
+                    syncPolicy:
+                      automated:
+                        prune: true
+                        selfHeal: true
+                    destination:
+                      namespace: default
