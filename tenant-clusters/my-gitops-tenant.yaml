@@ -26,6 +26,9 @@ spec:
             etcd:
               embedded:
                 enabled: true
+        sleep:
+          auto:
+            afterInactivity: 5m
         integrations:
           argoCD:
             enabled: true
