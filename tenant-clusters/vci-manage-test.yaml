@@ -1,0 +1,31 @@
+apiVersion: management.loft.sh/v1
+kind: VirtualClusterInstance
+metadata:
+  name: vci-manage-test
+  namespace: p-default
+spec:
+  displayName: vci-manage-test
+  owner:
+    user: admin
+  clusterRef:
+    cluster: agent
+  template:
+    helmRelease:
+      chart:
+        version: 0.35.0
+      values: |
+        sync:
+          toHost:
+            ingresses:
+              enabled: true
+        controlPlane:
+          coredns:
+            enabled: true
+            embedded: true
+          backingStore:
+            etcd:
+              embedded:
+                enabled: true
+        sleep:
+          auto:
+            afterInactivity: 4m
