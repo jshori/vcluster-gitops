@@ -4,7 +4,7 @@ metadata:
   name: vci-manage-test
   namespace: p-default
 spec:
-  displayName: vci-manage-test
+  displayName: vci-manage-test-new
   owner:
     user: admin
   clusterRef:
