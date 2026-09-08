@@ -28,7 +28,7 @@ spec:
                 enabled: true
         sleep:
           auto:
-            afterInactivity: 5m
+            afterInactivity: 4m
         integrations:
           argoCD:
             enabled: true
