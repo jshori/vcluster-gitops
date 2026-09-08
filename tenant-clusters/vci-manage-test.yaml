@@ -3,6 +3,8 @@ kind: VirtualClusterInstance
 metadata:
   name: vci-manage-test
   namespace: p-default
+  annotations:
+    sleepmode.loft.sh/disable-ingress-wakeup: "true"
 spec:
   displayName: vci-manage-test-new
   owner:
